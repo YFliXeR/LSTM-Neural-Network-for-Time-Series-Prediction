@@ -4,9 +4,9 @@ import numpy as np
 import datetime as dt
 from numpy import newaxis
 from core.utils import Timer
-from keras.layers import Dense, Activation, Dropout, LSTM
-from keras.models import Sequential, load_model
-from keras.callbacks import EarlyStopping, ModelCheckpoint
+from tensorflow.python.keras.layers import Dense, Activation, Dropout, LSTM
+from tensorflow.python.keras.models import Sequential, load_model
+from tensorflow.python.keras.callbacks import EarlyStopping, ModelCheckpoint
 
 class Model():
 	"""A class for an building and inferencing an lstm model"""
@@ -75,12 +75,13 @@ class Model():
 		callbacks = [
 			ModelCheckpoint(filepath=save_fname, monitor='loss', save_best_only=True)
 		]
-		self.model.fit_generator(
+		self.model.fit(
 			data_gen,
 			steps_per_epoch=steps_per_epoch,
 			epochs=epochs,
 			callbacks=callbacks,
-			workers=1
+			workers=1,
+			validation_split = 0.2 # Added validation split for 
 		)
 		
 		print('[Model] Training Completed. Model saved as %s' % save_fname)
