@@ -1,12 +1,11 @@
 import os
-import math
 import numpy as np
 import datetime as dt
 from numpy import newaxis
 from core.utils import Timer
-from tensorflow.python.keras.layers import Dense, Activation, Dropout, LSTM
-from tensorflow.python.keras.models import Sequential, load_model
-from tensorflow.python.keras.callbacks import EarlyStopping, ModelCheckpoint
+from tensorflow.keras.layers import Dense, Activation, Dropout, LSTM
+from tensorflow.keras.models import Sequential, load_model
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 
 
 class Model:
