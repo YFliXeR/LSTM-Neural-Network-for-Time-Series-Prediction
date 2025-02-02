@@ -1,10 +1,9 @@
 import os
-import math
 import numpy as np
 import datetime as dt
 from numpy import newaxis
 from core.utils import Timer
-from tensorflow.keras.layers import Dense, Activation, Dropout, LSTM # type: ignore
+from tensorflow.keras.layers import Dense, Dropout, LSTM # type: ignore
 from tensorflow.keras.models import Sequential, load_model # type: ignore
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint # type: ignore
 # ^^ Made it so vscode ignores these warnings
